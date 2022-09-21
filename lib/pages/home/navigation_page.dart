@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nft_marketplace/theme.dart';
+import 'package:nft_marketplace/widgets/live_bids_card.dart';
 
 class NavigationPage extends StatefulWidget {
   const NavigationPage({Key? key}) : super(key: key);
@@ -67,6 +68,33 @@ class _NavigationPageState extends State<NavigationPage> {
       );
     }
 
+    Widget sectionTitle(String titleName) {
+      return Container(
+        margin: const EdgeInsets.only(
+          top: 20,
+          bottom: 12,
+          left: 20,
+          right: 20,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              titleName,
+              style: primaryTextStyle.copyWith(
+                fontSize: 20,
+                fontWeight: medium,
+              ),
+            ),
+            Text(
+              'See More',
+              style: subtitleTextStyle,
+            )
+          ],
+        ),
+      );
+    }
+
     Widget bottomNavigationBar() {
       return BottomAppBar(
         child: BottomNavigationBar(
@@ -116,12 +144,32 @@ class _NavigationPageState extends State<NavigationPage> {
       );
     }
 
+    Widget contentLiveBids() {
+      return Container(
+        height: 400,
+        padding: const EdgeInsets.only(left: 20),
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          shrinkWrap: true,
+          clipBehavior: Clip.none,
+          children: const [
+            LiveBidsCard(),
+            LiveBidsCard(),
+            LiveBidsCard(),
+          ],
+        ),
+      );
+    }
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: backgroundColor1,
         body: ListView(
           children: [
             appBar(),
+            sectionTitle('Live Bids'),
+            contentLiveBids(),
+            sectionTitle('Top Creator'),
           ],
         ),
         bottomNavigationBar: bottomNavigationBar(),
