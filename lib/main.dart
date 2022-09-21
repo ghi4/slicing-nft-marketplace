@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nft_marketplace/pages/home/home_page.dart';
 import 'package:nft_marketplace/pages/home/navigation_page.dart';
 import 'package:nft_marketplace/pages/nft_detail_page.dart';
 
@@ -16,10 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/home': (context) => const HomePage(),
+        '/': (context) => const NavigationPage(),
         '/nft-detail': (context) => const NftDetailPage(),
       },
-      home: const NavigationPage(),
     );
   }
 }
