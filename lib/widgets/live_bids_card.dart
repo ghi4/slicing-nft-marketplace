@@ -8,7 +8,7 @@ class LiveBidsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Decoration boxDecoration = BoxDecoration(
       color: Colors.white.withOpacity(0.6),
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(20),
       border: Border.all(
         color: Colors.white,
         width: 1,
