@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nft_marketplace/pages/home/home_page.dart';
 import 'package:nft_marketplace/theme.dart';
 
 class NavigationPage extends StatefulWidget {
@@ -15,30 +14,49 @@ class _NavigationPageState extends State<NavigationPage> {
   @override
   Widget build(BuildContext context) {
     appBar() {
-      return AppBar(
-        centerTitle: false,
-        flexibleSpace: Row(
+      return Container(
+        margin: const EdgeInsets.symmetric(horizontal: 20),
+        height: 70,
+        child: Row(
           children: [
-            Container(
-              height: 46,
-              decoration: BoxDecoration(
-                color: backgroundColor2,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Row(
-                children: [
-                  Image.asset(
-                    'assets/images/ic_search.png',
-                    width: 24,
-                  ),
-                  Expanded(
-                    child: TextFormField(
-                      decoration: const InputDecoration.collapsed(
-                          hintText: 'Search NFT'),
+            Expanded(
+              child: Container(
+                height: 46,
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                decoration: BoxDecoration(
+                  color: backgroundColor2,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/images/ic_search.png',
+                      width: 24,
                     ),
-                  ),
-                ],
+                    const SizedBox(
+                      width: 4,
+                    ),
+                    Expanded(
+                      child: TextFormField(
+                        style: primaryTextStyle.copyWith(
+                          fontSize: 12,
+                        ),
+                        decoration: InputDecoration.collapsed(
+                          hintText: 'Search NFT',
+                          hintStyle: subtitleTextStyle2,
+                        ),
+                      ),
+                    ),
+                    Image.asset(
+                      'assets/images/ic_mic.png',
+                      width: 24,
+                    ),
+                  ],
+                ),
               ),
+            ),
+            const SizedBox(
+              width: 18,
             ),
             Image.asset(
               'assets/images/ic_notification_dot.png',
@@ -101,8 +119,11 @@ class _NavigationPageState extends State<NavigationPage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: backgroundColor1,
-        appBar: appBar(),
-        body: const HomePage(),
+        body: ListView(
+          children: [
+            appBar(),
+          ],
+        ),
         bottomNavigationBar: bottomNavigationBar(),
       ),
     );
