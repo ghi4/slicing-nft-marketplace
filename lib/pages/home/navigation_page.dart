@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nft_marketplace/theme.dart';
+import 'package:nft_marketplace/widgets/creator_card.dart';
 import 'package:nft_marketplace/widgets/live_bids_card.dart';
 
 class NavigationPage extends StatefulWidget {
@@ -161,6 +162,22 @@ class _NavigationPageState extends State<NavigationPage> {
       );
     }
 
+    Widget contentTopCreator() {
+      return Container(
+        height: 150,
+        margin: const EdgeInsets.only(bottom: 32),
+        padding: const EdgeInsets.only(left: 20),
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: const [
+            CreatorCard(),
+            CreatorCard(),
+            CreatorCard(),
+          ],
+        ),
+      );
+    }
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: backgroundColor1,
@@ -170,6 +187,7 @@ class _NavigationPageState extends State<NavigationPage> {
             sectionTitle('Live Bids'),
             contentLiveBids(),
             sectionTitle('Top Creator'),
+            contentTopCreator(),
           ],
         ),
         bottomNavigationBar: bottomNavigationBar(),
