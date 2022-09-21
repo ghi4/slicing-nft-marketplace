@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Color backgroundColor1 = const Color(0xff161616);
-Color backgroundColor2 = const Color(0xff1D1D1D);
+Color backgroundColor2 = const Color(0xff262626);
+Color backgroundColor3 = const Color(0xff1D1D1D);
 Color accentColor3 = const Color(0xffE8FB7A);
 
 Color primaryTextColor = const Color(0xffFFFFFF);
@@ -16,6 +17,7 @@ TextStyle subtitleTextStyle = GoogleFonts.poppins(
   color: subtitleTextColor,
 );
 TextStyle subtitleTextStyle2 = GoogleFonts.poppins(
+  fontSize: 12,
   color: subtitleTextColor2,
 );
 
